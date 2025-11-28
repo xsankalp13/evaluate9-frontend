@@ -10,9 +10,13 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-white mb-4">
-                            EvaluateIX
-                        </h3>
+                        <div className="relative w-48 h-12 mb-4">
+                            <img 
+                                src="/evaluateIX_final_logo.png" 
+                                alt="EvaluateIX" 
+                                className="w-full h-full object-contain object-left mix-blend-screen filter brightness-110 contrast-125" 
+                            />
+                        </div>
                         <p className="text-gray-400 mb-6 max-w-sm">
                             Empowering companies to build the best teams with AI-driven interview assessments and integrity checks.
                         </p>

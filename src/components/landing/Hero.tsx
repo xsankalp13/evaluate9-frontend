@@ -17,9 +17,9 @@ export const Hero = () => {
   return (
     <section ref={containerRef} className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050505] text-white pt-20">
       {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/20 rounded-full blur-[120px]" />
+      <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 z-10 flex flex-col items-center text-center">
@@ -27,7 +27,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400"
+          className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-white to-purple-400"
         >
           Master Your Interviews with <br />
           <span className="text-purple-500">AI-Powered Precision</span>
@@ -59,14 +59,14 @@ export const Hero = () => {
               <Image
                 src="/assets/dashboard-screenshot.jpg"
                 alt="EvaluateIX Dashboard"
-                width={1200}
-                height={800}
+                width={2400}
+                height={1600}
                 className="w-full h-auto object-cover"
                 priority
               />
 
               {/* Gradient Overlay for blending */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-50" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent opacity-50" />
             </motion.div>
           </div>
         </motion.div>

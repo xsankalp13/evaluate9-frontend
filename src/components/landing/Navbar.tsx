@@ -6,12 +6,18 @@ import { useState, useEffect } from "react";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const token = localStorage.getItem("token");
+    const [isLoggedIn, setLoggedin] = useState(false);
+    
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
+        if(token) {
+            setLoggedin(true);
+        }
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -25,9 +31,13 @@ export const Navbar = () => {
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-white">
-                    EvaluateIX
-                </Link>
+                <div className="relative w-48 h-12">
+                    <img 
+                        src="/evaluateIX_final_logo.png" 
+                        alt="EvaluateIX" 
+                        className="w-full h-full object-contain object-left mix-blend-screen filter brightness-110 contrast-125" 
+                    />
+                </div>
 
                 {/* Center Links */}
                 <div className="hidden md:flex items-center gap-8">
@@ -44,20 +54,30 @@ export const Navbar = () => {
                 </div>
 
                 {/* Right Buttons */}
-                <div className="flex items-center gap-4">
+                {isLoggedIn ? (
                     <Link
-                        href="/login"
+                        href="/auth/login"
+                        className="px-4 py-2 text-sm font-medium bg-white text-black rounded-sm outline-2 outline-black hover:bg-gray-200 transition-colors"
+                    >
+                        Dashboard
+                    </Link>
+                ): (
+                    <div className="flex items-center gap-4">
+                    <Link
+                        href="/auth/login"
                         className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
                     >
                         Login
                     </Link>
                     <Link
-                        href="/signup"
-                        className="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-gray-200 transition-colors"
+                        href="/auth/register"
+                        className="px-4 py-2 text-sm font-medium bg-white text-black rounded-md hover:bg-gray-200 transition-colors"
                     >
                         Sign Up
                     </Link>
                 </div>
+                )}
+                
             </div>
         </motion.nav>
     );
