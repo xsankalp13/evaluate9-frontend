@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
-    const token = localStorage.getItem("token");
+    
     const [isLoggedIn, setLoggedin] = useState(false);
     
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
