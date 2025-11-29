@@ -191,10 +191,10 @@ export function RegisterForm() {
           <Button 
             type="submit" 
             className="w-full h-11 bg-white text-black hover:bg-zinc-200 font-semibold mt-6 transition-all" 
-            disabled={isLoading}
+            disabled={true}
           >
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {isLoading ? "Creating Account..." : "Sign Up"}
+            {isLoading ? "Creating Account..." : "Currently Not Accepting Registrations"}
           </Button>
         </form>
       </Form>
