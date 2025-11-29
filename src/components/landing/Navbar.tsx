@@ -12,7 +12,7 @@ export const Navbar = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        
+
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
@@ -46,7 +46,7 @@ export const Navbar = () => {
                     {["Home", "Pricing", "About Us", "Contact"].map((item) => (
                         <Link
                             key={item}
-                            href={`/${item.toLowerCase().replace(" ", "-")}`}
+                            href={item === 'Home' ? '/' :`/${item.toLowerCase().replace(" ", "-")}`}
                             className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
                         >
                             {item}

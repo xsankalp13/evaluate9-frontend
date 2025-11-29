@@ -6,7 +6,7 @@ import { CheckCircle2, XCircle } from "lucide-react";
 export const AIContentChecker = () => {
     return (
         <section className="py-24 bg-[#0a0a0a] text-white relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#050505] to-[#0a0a0a]" />
+            <div className="absolute inset-0 bg-linear-to-b from-[#050505] to-[#0a0a0a]" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
